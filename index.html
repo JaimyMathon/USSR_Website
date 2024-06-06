@@ -84,91 +84,51 @@
         <div data-img-to-show="#img-1"></div>
     </section>
 
-    <section class="scroll-section">
+    <section class="scroll-section card">
         <div class="scroll-text scroll-text-top red"><i>давайте начнем экскурсию</i></div>
         <div class="scroll-text scroll-text-bottom"><i>давайте начнем экскурсию</i></div>
     </section>
 
-    <section class="full-screen-section">
-        <h1 class="title">Full Stack</h1>
-        <p>
-            Never manage infrastructure again. One click gets you: a database, APIs,
-            deployments, hosting, etc.<br>
-        </p>
-        <p>
-            Never manage infrastructure again. One click gets you: a database, APIs,
-            deployments, hosting, etc.<br>
-        </p>
-        <p>
-            Never manage infrastructure again. One click gets you: a database, APIs,
-            deployments, hosting, etc.<br>
-        </p>
-        <p>
-            Never manage infrastructure again. One click gets you: a database, APIs,
-            deployments, hosting, etc.<br>
-        </p>
-        <p>
-            Never manage infrastructure again. One click gets you: a database, APIs,
-            deployments, hosting, etc.<br>
-        </p>
-        <p>
-            Never manage infrastructure again. One click gets you: a database, APIs,
-            deployments, hosting, etc.<br>
-        </p>
-        <p>
-            Never manage infrastructure again. One click gets you: a database, APIs,
-            deployments, hosting, etc.<br>
-        </p>
-        <p>
-            Never manage infrastructure again. One click gets you: a database, APIs,
-            deployments, hosting, etc.<br>
-        </p>
-        <p>
-            Never manage infrastructure again. One click gets you: a database, APIs,
-            deployments, hosting, etc.<br>
-        </p>
-        <p>
-            Never manage infrastructure again. One click gets you: a database, APIs,
-            deployments, hosting, etc.<br>
-        </p>
-        <p>
-            Never manage infrastructure again. One click gets you: a database, APIs,
-            deployments, hosting, etc.<br>
-        </p>
-        <p>
-            Never manage infrastructure again. One click gets you: a database, APIs,
-            deployments, hosting, etc.<br>
-        </p>
-        <p>
-            Never manage infrastructure again. One click gets you: a database, APIs,
-            deployments, hosting, etc.<br>
-        </p>
-        <div data-img-to-show="#img-2"></div>
+    <section class="new-page card">
+        <div class="overlay2"></div>
+        <h1 class="title">New Page Content</h1>
+        <p>This is the content of the new page.</p>
     </section>
-    <section class="full-screen-section">
-        <h1 class="title">Launch Faster</h1>
-        <p>Logical can get systems to market in minutes instead of weeks.</p>
-        <div data-img-to-show="#img-3"></div>
+
+    <section class="dummy-content card">
+        <h1 class="title">Dummy Content</h1>
+        <p>This is dummy content for demonstration purposes.</p>
     </section>
 
     <script>
-document.addEventListener('scroll', function () {
-    const scrollSection = document.querySelector('.scroll-section');
-    const scrollTop = window.scrollY;
-    const sectionTop = scrollSection.offsetTop;
-    const sectionHeight = scrollSection.offsetHeight;
-    const viewportHeight = window.innerHeight;
+        document.addEventListener('scroll', function () {
+            const scrollSection = document.querySelector('.scroll-section');
+            const newPage = document.querySelector('.new-page');
+            const overlay2 = newPage.querySelector('.overlay2');
+            const scrollTop = window.scrollY;
+            const sectionTop = scrollSection.offsetTop;
+            const sectionHeight = scrollSection.offsetHeight;
+            const viewportHeight = window.innerHeight;
 
-    if (scrollTop + viewportHeight >= sectionTop && scrollTop <= sectionTop + sectionHeight) {
-        const scrollProgress = (scrollTop + viewportHeight - sectionTop) / (sectionHeight + viewportHeight);
-        const topText = document.querySelector('.scroll-text-top');
-        const bottomText = document.querySelector('.scroll-text-bottom');
+            if (scrollTop + viewportHeight >= sectionTop && scrollTop <= sectionTop + sectionHeight) {
+                const scrollProgress = (scrollTop + viewportHeight - sectionTop) / (sectionHeight + viewportHeight);
+                const topText = document.querySelector('.scroll-text-top');
+                const bottomText = document.querySelector('.scroll-text-bottom');
 
-        topText.style.left = `${scrollProgress * 250 - 100}%`;
-        bottomText.style.right = `${scrollProgress * 250 - 100}%`;
-    }
-});
+                topText.style.left = `${scrollProgress * 250 - 100}%`;
+                bottomText.style.right = `${scrollProgress * 250 - 100}%`;
 
+                // Update overlay2 opacity based on scroll progress
+                const overlayOpacity = 1 - scrollProgress;
+                overlay2.style.background = `rgba(0, 0, 0, ${overlayOpacity})`;
+            } else if (scrollTop > sectionTop + sectionHeight) {
+                // Ensure the overlay2 is fully transparent when the scroll section is out of view
+                overlay2.style.background = 'rgba(0, 0, 0, 0)';
+            } else {
+                // Reset overlay2 when not in the scroll section
+                overlay2.style.background = 'rgba(0, 0, 0, 1)';
+            }
+        });
     </script>
 </body>
 </html>

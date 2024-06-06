@@ -392,23 +392,69 @@ h1 {
   justify-content: center;
   align-items: center;
 }
+
 .scroll-text {
   position: absolute;
   white-space: nowrap;
   font-size: 4em;
   font-weight: bold;
-  font-family: kach;
-  text-transform: uppercase;
 }
 
 .red {
-  color: #E64C36;
+  color:#E94B35
 }
+
 .scroll-text-top {
   top: 40%;
-  left: 0%;
+  left: -100%;
 }
+
 .scroll-text-bottom {
   top: 60%;
-  right: 0%;
+  right: -100%;
+}
+
+.new-page {
+  position: relative;
+  height: 100vh;
+  background-image: url('imgs/background-ussr.jpg'); /* Controleer of dit pad correct is */
+  background-size: cover; /* Optie: beeldformaat instellen */
+  background-position: center; /* Optie: positie van de achtergrondafbeelding */
+  transition: background 0.3s ease;
+}
+
+.overlay2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 1); /* Start fully dark */
+  pointer-events: none; /* Allow clicks to pass through */
+  transition: background 0.3s ease; /* Smooth transition */
+}
+
+.overlay2.active {
+  display: block; /* Laat de overlay zien wanneer deze actief is */
+}
+
+.card {
+  width: 100vw;
+  height: 100vh;
+  background: #1a1a1a;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+}
+
+.dummy-content {
+  height: 200vh; /* Height for demonstration purposes */
+  background: #1a1a1a;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
