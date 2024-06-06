@@ -1,0 +1,414 @@
+@font-face {
+  font-family: rodchenko;
+  src: url(fonts/Rodchenko/Rodchenko.ttf);
+}
+
+@font-face {
+  font-family: euro;
+  src: url(fonts/eurocentric/eurcntrc.ttf);
+}
+
+@font-face {
+  font-family: kach;
+  src: url(fonts/kachusha/Kachusha.ttf);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: #fff;
+  background-color: #1a1a1a;
+  font-size: 28px;
+  font-family: 'Arial', sans-serif;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(imgs/ruis.gif) repeat;
+  opacity: 0.02;
+  z-index: 1100;
+  pointer-events: none;
+}
+
+body {
+  position: relative;
+  z-index: 1;
+}
+
+.menu-icon {
+  width: 30px;
+  height: 30px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.menu-icon span {
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: #f0f0f0;
+  margin: 6px 0;
+  transition: all 0.3s ease;
+}
+
+.menu-icon.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-icon.open span:nth-child(2) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.overlay {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  top: -100%;
+  left: 0;
+  transition: top 0.5s ease;
+  z-index: 1000;
+}
+
+.overlay.open {
+  top: 0;
+}
+
+.overlay-menu {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.overlay-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.overlay-menu ul li {
+  margin: 20px 0;
+}
+
+.overlay-menu ul li a {
+  text-decoration: none;
+  font-size: 24px;
+  color: #f0f0f0;
+  transition: color 0.3s;
+}
+
+.overlay-menu ul li a:hover {
+  color: #e91e63;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #1a1a1a;
+  color: #fff;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #a7a7a7;
+}
+
+.timeline {
+  width: 500px;
+  height: 2px;
+  background: #fff;
+  position: absolute;
+  top: 130px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cursor {
+  width: 50px;
+  height: 2px;
+  background: #E94B35;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  animation: moveCursor 2s infinite linear alternate;
+}
+
+@keyframes moveCursor {
+  0% {
+    left: 0;
+  }
+
+  100% {
+    left: calc(100% - 50px);
+  }
+}
+
+.year {
+  position: absolute;
+  top: -10px;
+  color: #fff;
+  font-size: 1rem;
+}
+
+/* De rest van je CSS-styling voor .year kun je hier ook plaatsen */
+
+
+h1 {
+  margin-top: 150px;
+  position: relative;
+  font-size: 170px;
+  margin-bottom: -3rem;
+  font-family: rodchenko;
+  color: #E94B35;
+  z-index: 2;
+  padding-left: 2%;
+}
+
+#img-jet {
+  width: 100vh;
+  rotate: -20deg;
+  margin-left: -15%;
+  transform: translate(
+    calc(2% * (min(var(--scroll), 100) - 1) * 100 / 75), 
+    calc(1% * (min(var(--scroll), 100) - 1) * -100 / 75)
+  );
+}
+
+#img-triangle {
+  position: absolute;
+  top: 800px;
+  left: -500px;
+  width: 250vh;
+  rotate: -20deg;
+  margin-left: -15%;
+  transform: translate(
+    calc(0.7% * (max(min(var(--scroll), 100) - 51, 0)) * 100 / 75), 
+    calc(0.7% * (max(min(var(--scroll), 100) - 51, 0)) * -100 / 75)
+  );
+}
+
+.full-screen-section {
+  min-height: 100vh;
+  text-align: center;
+  padding: 2rem; /* verhoogde padding voor extra ruimte */
+  position: relative;
+}
+
+.top-section .left,
+.top-section .right {
+  flex-grow: 1;
+  padding: 1rem;
+  height: 700px;
+}
+
+.right {
+  margin-top: 150px;
+  display: grid;
+  position: relative;
+}
+
+.right p {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 20px;
+  text-align: right;
+  padding-right: 7%;
+}
+
+.grid-img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+  transform: translateY(
+    calc(-1% * (min(var(--scroll), 100) - 1) * 100 / 75)
+  );
+}
+
+.top-section {
+  display: flex;
+  text-align: start;
+  padding: 0;
+}
+
+.imgs > .top-section-img {
+  --value: min(var(--scroll), 30) * 50 / 30;
+  width: calc(50vw + 1vw * var(--value));
+  transform: translateY(calc(50% - 1% * var(--value)));
+}
+
+@media (width <= 1000px) {
+  .top-section .right {
+    display: none;
+  }
+
+  .top-section .left {
+    text-align: center;
+  }
+
+  .right {
+    flex-basis: 15%; 
+    padding: 1rem;
+  }
+
+  body {
+    font-size: 24px;
+  }
+
+  h1 {
+    font-size: 72px;
+  }
+
+  .imgs > .top-section-img {
+    width: 100vw;
+  }
+}
+
+:root {
+  --scroll: 0;
+}
+
+.top-section {
+  position: sticky;
+  top: 0;
+  translate: 0 calc(-1% * (max(var(--scroll), 25) - 25) * 100 / 75);
+  --background-opacity: calc(100% - 1% * min(var(--scroll), 30) * 100 / 30);
+}
+
+.first-main-section {
+  padding-top: 10vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.scrolling-text {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.imgs > * {
+  position: fixed;
+  width: 100vw;
+  bottom: 0;
+  z-index: 10;
+  translate: 0 100%;
+  transition: translate 250ms ease-in-out;
+}
+
+.imgs > .show {
+  translate: 0 0;
+}
+
+[data-img-to-show] {
+  position: absolute;
+  top: 20%;
+}
+
+.title {
+  position: -webkit-sticky;
+  position: sticky;
+  height: auto;
+  top: 90px;
+  /* background-color: rgb(26, 26, 26); Background color for better readability */
+  padding: 1rem;
+  width: 20%;
+  font-size: 80px;
+}
+
+.flex-onderwerpen {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+.image-div, .text-div {
+  flex: 1 1 45%;
+  min-width: 300px;
+}
+
+.onderwerp-title {
+  padding: 20px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  color: #d2d2d2;
+}
+
+.onderwerp-numbers {
+  position: relative;
+  /* display: inline-block; */
+  padding-left: 20px; /* ruimte voor de lijn */
+  padding-right: 500px;
+  font-size: 16px;
+}
+
+.onderwerp-numbers::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px; /* de lengte van de lijn */
+  height: 2px; /* de dikte van de lijn */
+  background-color: white; /* de kleur van de lijn */
+}
+
+.onderwerp-text {
+  border-bottom: 2px solid #fff; /* De kleur en dikte van de lijn */
+  padding-bottom: 10px; /* Optioneel: ruimte tussen de tekst en de lijn */
+  margin-bottom: 20px; /* Optioneel: ruimte onder de lijn */
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.scroll-section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.scroll-text {
+  position: absolute;
+  white-space: nowrap;
+  font-size: 4em;
+  font-weight: bold;
+  font-family: kach;
+  text-transform: uppercase;
+}
+
+.red {
+  color: #E64C36;
+}
+.scroll-text-top {
+  top: 40%;
+  left: 0%;
+}
+.scroll-text-bottom {
+  top: 60%;
+  right: 0%;
+}

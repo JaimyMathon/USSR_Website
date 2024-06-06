@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>USSR Culture</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="imgs">
+        <!-- <img
+            src="imgs/img-1.png"
+            data-img
+            id="img-1"
+            class="top-section-img show"
+        />
+        <img src="imgs/img-2.png" data-img id="img-2" />
+        <img src="imgs/img-3.png" data-img id="img-3" /> -->
+    </div>
+    <header>
+        <div class="logo">Logo</div>
+    </header>
+    <div class="menu-icon" id="menu-icon">
+        <span></span>
+        <span></span>
+    </div>
+    <div class="overlay" id="overlay">
+        <nav class="overlay-menu">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Over</a></li>
+                <li><a href="#artists">Kunstenaars</a></li>
+                <li><a href="#gallery">Galerij</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="timeline">
+        <div class="year" style="left: -70px;">1922</div>
+        <div class="year" style="left: calc(100% - -20px);">1991</div>
+        <div class="cursor"></div>
+    </div>
+    <section class="top-section full-screen-section">
+        <div class="left">
+            <h1>Wist jij dit over de Sovjet Unie Kunst & Cultuur</h14>
+            <img src="imgs/triangle-bg.png" alt="img-triangle" id="img-triangle">
+            <img src="imgs/jet.png" alt="Jet" id="img-jet">
+        </div>
+
+        <div class="right">
+            <p>69 jaar over cultuur en kunst - USSR design</p>
+        </div>
+    </section>
+    <section class="full-screen-section">
+        <h1 class="title">Onderwerpen USSR</h1> 
+        <div class="flex-onderwerpen">
+            <div class="image-div">
+                
+            </div>
+            <div class="text-div">
+                <div class="onderwerp-title">
+                    <p class="onderwerp-numbers">01</p>
+                    <p class="onderwerp-text">Soviet Design gaat niet alleen maar om foto's en posters maar ook om gebouwen, vliegtuigen en auto's herkenbaar over de hele wereld.</p>
+                </div>
+
+                <div class="onderwerp-title">
+                    <p class="onderwerp-numbers">02</p>
+                    <p class="onderwerp-text">Sovjet-ontwerp is een legacy van onschatbare waarde van een enorm land. Sovjet-ontwerp is suprematisme, constructivisme, avant-gardisme.</p>
+                </div>
+
+                <div class="onderwerp-title">
+                    <p class="onderwerp-numbers">03</p>
+                    <p class="onderwerp-text">Sovjet-ontwerp is Kazimir Malevich, El Lissitzky, Wassily Kandinsky, Marc Chagall, Alexander Rodchenko, Vladimir Tatlin en vele anderen.</p>
+                </div>
+
+                <div class="onderwerp-title">
+                    <p class="onderwerp-numbers">04</p>
+                    <p class="onderwerp-text">Sovjet-design is een bron van inspiratie voor duizenden mensen en trots voor miljoenen.</p>
+                </div> 
+            </div>
+        </div>
+        <div data-img-to-show="#img-1"></div>
+    </section>
+
+    <section class="scroll-section">
+        <div class="scroll-text scroll-text-top red"><i>давайте начнем экскурсию</i></div>
+        <div class="scroll-text scroll-text-bottom"><i>давайте начнем экскурсию</i></div>
+    </section>
+
+    <section class="full-screen-section">
+        <h1 class="title">Full Stack</h1>
+        <p>
+            Never manage infrastructure again. One click gets you: a database, APIs,
+            deployments, hosting, etc.<br>
+        </p>
+        <p>
+            Never manage infrastructure again. One click gets you: a database, APIs,
+            deployments, hosting, etc.<br>
+        </p>
+        <p>
+            Never manage infrastructure again. One click gets you: a database, APIs,
+            deployments, hosting, etc.<br>
+        </p>
+        <p>
+            Never manage infrastructure again. One click gets you: a database, APIs,
+            deployments, hosting, etc.<br>
+        </p>
+        <p>
+            Never manage infrastructure again. One click gets you: a database, APIs,
+            deployments, hosting, etc.<br>
+        </p>
+        <p>
+            Never manage infrastructure again. One click gets you: a database, APIs,
+            deployments, hosting, etc.<br>
+        </p>
+        <p>
+            Never manage infrastructure again. One click gets you: a database, APIs,
+            deployments, hosting, etc.<br>
+        </p>
+        <p>
+            Never manage infrastructure again. One click gets you: a database, APIs,
+            deployments, hosting, etc.<br>
+        </p>
+        <p>
+            Never manage infrastructure again. One click gets you: a database, APIs,
+            deployments, hosting, etc.<br>
+        </p>
+        <p>
+            Never manage infrastructure again. One click gets you: a database, APIs,
+            deployments, hosting, etc.<br>
+        </p>
+        <p>
+            Never manage infrastructure again. One click gets you: a database, APIs,
+            deployments, hosting, etc.<br>
+        </p>
+        <p>
+            Never manage infrastructure again. One click gets you: a database, APIs,
+            deployments, hosting, etc.<br>
+        </p>
+        <p>
+            Never manage infrastructure again. One click gets you: a database, APIs,
+            deployments, hosting, etc.<br>
+        </p>
+        <div data-img-to-show="#img-2"></div>
+    </section>
+    <section class="full-screen-section">
+        <h1 class="title">Launch Faster</h1>
+        <p>Logical can get systems to market in minutes instead of weeks.</p>
+        <div data-img-to-show="#img-3"></div>
+    </section>
+
+    <script>
+document.addEventListener('scroll', function () {
+    const scrollSection = document.querySelector('.scroll-section');
+    const scrollTop = window.scrollY;
+    const sectionTop = scrollSection.offsetTop;
+    const sectionHeight = scrollSection.offsetHeight;
+    const viewportHeight = window.innerHeight;
+
+    if (scrollTop + viewportHeight >= sectionTop && scrollTop <= sectionTop + sectionHeight) {
+        const scrollProgress = (scrollTop + viewportHeight - sectionTop) / (sectionHeight + viewportHeight);
+        const topText = document.querySelector('.scroll-text-top');
+        const bottomText = document.querySelector('.scroll-text-bottom');
+
+        topText.style.left = `${scrollProgress * 250 - 100}%`;
+        bottomText.style.right = `${scrollProgress * 250 - 100}%`;
+    }
+});
+
+    </script>
+</body>
+</html>
