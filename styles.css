@@ -358,6 +358,11 @@ h1 {
   background-size: cover;
 }
 
+.title-text {
+  color: white;
+  font-family: Como;
+}
+
 .flex-onderwerpen {
   display: flex;
   flex-wrap: wrap;
@@ -472,6 +477,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   position: sticky;
   top: 0;
 }
@@ -565,6 +571,8 @@ h1 {
   font-family: como;
   font-size: 21px;
   width: 70%;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
 }
 
 .styled-text::before {
@@ -639,8 +647,9 @@ h1 {
   transform: translate(0, -50%);
   font-family: system-ui;
   display: none;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
 }
-
 
 .slide .item:nth-child(2) .content{
   display: block;
