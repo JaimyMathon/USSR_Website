@@ -103,7 +103,6 @@
     <section class="chapter1-content card">
         <div class="chapter1-box">
             <div class="overlay"></div>
-            <!-- <h1 class="chapter-title">Vrije pioniers</h1> -->
             <div class="content">
                 <div class="picture-text">
                     <img src="imgs/kasimir_severinovich_malevich_black_square.webp" alt="black_square">
@@ -170,19 +169,64 @@
             </div>
     
         </div>
+
+        <section class="chapter2 card">
+            <div class="overlay2"></div>
+            <h1 class="title title-1">CHAPTER 2</h1>
+            <div class="containerc">
+      
+                <div class="cardc">
+                  <div class="circle"></div>
+                  <div class="dot"></div>
+                  <div class="dot2"></div>
+                </div>
+              </div>        
+            <p class="title-text"><i>Stalin op de radar</i></p>
+            <div class="timeline">
+                <div class="year" style="left: -70px;">1921</div>
+                <div class="year" style="left: calc(100% - -20px);">1928</div>
+                <div class="cursor"></div>
+            </div>
+    
+            <div class="chapter2-box">
+                <!-- <p>Dit is even wat tekst om te kijken wat er gaat gebeuren</p> -->
+                <div class="content-1">
+                    <div class="picture-text-1">
+                        <img src="imgs/The_stakhanovite_movement_1937_Aleksandr_Deyneka.webp" alt="stakhanovite">
+                        <div class="text">
+                            <h5 class="styled-text">De <i>"The stakhanovite Movement"</i> gemaakt door Aleksandr Deyneka</h5>
+                            <p>Dit schilderij laat zien dat het werk van de arbeiders wordt aangemoedigd om de productiviteit nog hoger te leggen. Dit schilderij is geïnspireerd door mijnwerker: Alexey Stakhanov.</p>
+                        </div>
+                    </div>
+                    <div class="picture-text-1">
+                        <img src="imgs/lenin_in_smolny.jpg" alt="lenin">
+                        <div class="text">
+                            <h5 class="styled-text">De <i>"Lenin in Smolny"</i> gemaakt door Isaak Brodsky</h5>
+                            <p>Dit schilderij laat Vladimir Lenin zien binnen het Smolny-instituut. Dit was het hoofdkwartier tijdens de Oktoberrevolutie. Dit schilderij werd gewaardeerd vanwege de realistische en heroïsche weergave van Lenin.</p>
+                        </div>
+                    </div>
+                    <div class="picture-text-1">
+                        <img src="imgs/they_are_writing.jpg" alt="writing">
+                        <div class="text">
+                            <h5 class="styled-text"><i>"They are writing about us in Pravda"</i> gemaakt door Geli Korzhev</h5>
+                            <p>Dit schilderij toont arbeiders die trots een krant lezen waarin ze lezen over hun goede prestaties. dit schilderij laat zien over de trots in de arbeidklasse.</p>
+                        </div>
+                    </div>
+                    <div class="picture-text-1">
+                        <img src="imgs/worker and kolkhoz woman.jpg" alt="design_for_sportswear">
+                        <div class="text">
+                            <h5 class="styled-text">De <i>"Worker and Kolkhoz Woman"</i> gemaakt door Vera Mukhina</h5>
+                            <p>Dit sculptuur is gemaakt voor de wereldtentoonstelling in Parijs. Het laat een arbeider zien en een kolchoz (van de boederij) vrouw. deze houden een hammer en een sikkel omhoog wat laat zien over de industriële kracht in de Sovjetstaat.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </section>
 
-    <section class="new-page card">
-        <div class="overlay2"></div>
-        <h1 class="title title-1">CHAPTER 1</h1>
-        <p class="title-text"><i>Vrije Pioniers: Kunstenaars van de USSR gouden begin</i></p>
-        <div class="timeline">
-            <div class="year" style="left: -70px;">1921</div>
-            <div class="year" style="left: calc(100% - -20px);">1928</div>
-            <div class="cursor"></div>
-        </div>
-    </section>
     
+
+
 
     <script>
         document.addEventListener('scroll', function () {
@@ -216,8 +260,8 @@
             // Update background color for chapter1-content section
             const chapterContent = document.querySelector('.chapter1-content');
             if (scrollTop >= chapterContent.offsetTop - viewportHeight / 30) {
-                chapterContent.style.backgroundColor = 'white';
-                chapterContent.style.color = 'black';
+                chapterContent.style.backgroundColor = '#212121';
+                chapterContent.style.color = 'white';
             } else {
                 chapterContent.style.backgroundColor = '#1a1a1a';
                 chapterContent.style.color = 'white';
@@ -225,17 +269,29 @@
         });
 
         let next = document.querySelector('.next')
-let prev = document.querySelector('.prev')
+        let prev = document.querySelector('.prev')
 
-next.addEventListener('click', function(){
-    let items = document.querySelectorAll('.item')
-    document.querySelector('.slide').appendChild(items[0])
-})
+        next.addEventListener('click', function(){
+            let items = document.querySelectorAll('.item')
+            document.querySelector('.slide').appendChild(items[0])
+        })
 
-prev.addEventListener('click', function(){
-    let items = document.querySelectorAll('.item')
-    document.querySelector('.slide').prepend(items[items.length - 1]) // here the length of items = 6
-})
+        prev.addEventListener('click', function(){
+            let items = document.querySelectorAll('.item')
+            document.querySelector('.slide').prepend(items[items.length - 1]) // here the length of items = 6
+        })
+
+        const { innerHeight } = window;
+
+        gsap.to("#zoom-in h2", {
+            scale: 500, stager: 0.25, duration: 3,
+            scrollTrigger: {
+                trigger: "#zoom-in",
+                pin: true,
+                end: `+=${innerheight * 1.3}`,
+                scrub: 3
+            }
+        });
     </script>
 </body>
 </html>

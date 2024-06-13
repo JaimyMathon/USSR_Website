@@ -350,7 +350,6 @@ h1 {
   width: 100%;
   text-align: center;
   top: 0;
-  margin: 0;
   font-size: 12em;
   background: url("imgs/lenin.jpg") no-repeat;
   -webkit-background-clip: text;
@@ -471,7 +470,7 @@ h1 {
 
 .card {
   width: 100vw;
-  height: 100vh;
+  /* height: 100vh; */
   background: #1a1a1a;
   color: white;
   display: flex;
@@ -480,6 +479,20 @@ h1 {
   flex-direction: column;
   position: sticky;
   top: 0;
+}
+
+.card .overlay2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+}
+
+.card-1 {
+  margin-top: 4rem;
 }
 
 .chapter1-box {
@@ -510,6 +523,7 @@ h1 {
   display: block;
   height: auto;
   transition: background-color 1.5s, color 1.5s;
+  top: unset;
 }
 
 .chapter-title {
@@ -534,7 +548,7 @@ h1 {
   z-index: 200;
 }
 
-.chapter1-box .content .picture-text {
+ .picture-text {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -543,13 +557,34 @@ h1 {
   margin-left: 7%;
 }
 
-.chapter1-box .content .picture-text .text:hover {
+.content-1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.picture-text-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 45%; /* Adjust this value to control spacing between items */
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+ .picture-text .text:hover {
   color: white;  
 }
 
-.chapter1-box .content .picture-text img {
+.picture-text img {
   width: 20%;
   margin-bottom: 40px;
+  box-shadow: 0 10px 30px #000000;
+}
+
+.picture-text-1 img {
+  width: 100%;
+  margin-bottom: 20px;
   box-shadow: 0 10px 30px #000000;
 }
 
@@ -568,6 +603,28 @@ h1 {
 }
 
 .chapter1-box .content .text p {
+  font-family: como;
+  font-size: 21px;
+  width: 70%;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+.chapter1-box .content-1  p {
+  font-family: como;
+  font-size: 21px;
+  width: 70%;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.text p {
   font-family: como;
   font-size: 21px;
   width: 70%;
@@ -715,4 +772,173 @@ h1 {
 .button button:hover{
   background: #ababab;
   color: #fff;
+}
+
+#text {
+  height: 300px;
+  width: 300px;
+  position: relative;
+  animation: effect 8s linear infinite;
+}
+
+@keyframes effect {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+span {
+  position: absolute;
+  left: 50%;
+  transform-origin: 0px 150px;
+  transform-style: flat;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: #fff;
+}
+
+.chapter2 {
+  position: relative;
+  top: 550px;
+  /* height: 100vh; */
+}
+
+.containerc {
+  width: 280px;
+  height: 280px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: hue-rotate(10deg);
+  position: absolute; /* Ensure it's positioned absolutely within chapter2 */
+  top: 5%; /* Center it vertically */
+  left: 5%; /* Center it horizontally */
+  transform: translate(-50%, -50%); /* Adjust for perfect centering */
+  z-index: 0; /* Lower z-index to push it back */
+}
+
+.cardc {
+  width: 100px;
+  height: 100px;
+  background: #000000;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #18D322;
+  overflow: hidden;
+}
+
+.cardc::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 200px;
+  left: 49%;
+  background-color: #18D322;
+  animation: rotate 3s linear infinite;
+  z-index: 6;
+}
+
+.cardc::before {
+  content: "";
+  position: absolute;
+  width: 0px;
+  height: 200px;
+  left: 49%;
+  transform: rotate(-4deg);
+  background-color: #18D322;
+  animation: rotate 3s linear infinite;
+  box-shadow: 0 0 10px 10px #2fbb39;
+  z-index: 6;
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  border: 2px solid #18D322;
+  border-radius: 50%;
+}
+
+.circle::before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  border: 2px solid #18D322;
+  border-radius: 50%;
+}
+
+.circle::after {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  border: 2px solid #18D322;
+  border-radius: 50%;
+}
+
+.dot {
+  width: 4px;
+  height: 4px;
+  top: 30%;
+  background-color: #18D322;
+  border-radius: 50%;
+  position: absolute;
+  animation: doted 1.5s  ease infinite;
+}
+
+.dot2 {
+  width: 4px;
+  height: 4px;
+  top: 80%;
+  right: 30%;
+  background-color: #18D322;
+  border-radius: 50%;
+  position: absolute;
+  animation: doted 1.5s  1.2s ease infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes doted {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 10px 5px rgba(24, 211, 33, 0.3),0 0 10px 10px rgba(24, 211, 33, 0.3);
+  }
+
+  60% {
+    transform: scale(0.95);
+    box-shadow: 0 0 10px 5px rgba(24, 211, 33, 0.3),0 0 10px 10px rgba(24, 211, 33, 0.3);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(24, 211, 33, 0.7),0 0 0 0 rgba(24, 211, 33, 0.5),0 0 0 0 rgba(24, 211, 33, 0.3);
+    opacity: 0;
+  }
+}
+
+/* Ensure other elements have a higher z-index or are naturally in front */
+.overlay2, .title, .title-text {
+  position: relative;
+  z-index: 1; 
 }
