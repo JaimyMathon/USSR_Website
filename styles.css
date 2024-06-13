@@ -622,7 +622,6 @@ h1 {
 .text {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
 }
 
 .text p {
@@ -696,15 +695,16 @@ h1 {
 .item .content{
   position: absolute;
   top: 50%;
-  left: 100px;
+  left: 20px;
   width: 300px;
   text-align: left;
   color: #eee;
   transform: translate(0, -50%);
   font-family: system-ui;
   display: none;
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: black;
+  background-color:rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  padding: 5px;
 }
 
 .slide .item:nth-child(2) .content{
@@ -725,6 +725,8 @@ h1 {
   margin-bottom: 20px;
   opacity: 0;
   animation: animate 1s ease-in-out 0.3s 1 forwards;
+  font-family: Oswald;
+  font-size: 20px;
 }
 
 .content button{
@@ -801,7 +803,6 @@ span {
 
 .chapter2 {
   position: relative;
-  top: 550px;
   /* height: 100vh; */
 }
 
@@ -954,4 +955,111 @@ h3 {
   font-size: 25px;
   width: 95%;
   text-align: center;
+}
+
+.chapter2-box .explain-text {
+  margin-left: 25px;
+}
+
+.kunst-title {
+  position: relative;
+  text-align: left;
+  margin-left: 50px;
+  top: 60px;  
+}
+
+/* General styling for items */
+.item {
+  position: relative;
+  width: 100%; /* Adjust the width as needed */
+  height: auto; /* Adjust the height as needed */
+  background-size: cover;
+  cursor: pointer;
+}
+
+/* Modal styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  /* width: 100%;
+  height: 100%; */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.9); /* Black with opacity */
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 100%;
+  /* max-width: 700px; */
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.img-comp-container {
+  position: absolute;
+  left: 31%;
+  top: 105%;
+}
+
+
+.img-comp-img {
+  position: absolute;
+  width: auto;
+  height: auto;
+  overflow: hidden;
+}
+
+.img-comp-img img {
+  display: block;
+  vertical-align: middle;
+}
+
+.img-comp-slider {
+  position: absolute;
+  z-index: 9;
+  cursor: ew-resize;
+  /*set the appearance of the slider:*/
+  width: 40px;
+  height: 40px;
+  background-color: #ffffff;
+  opacity: 0.7;
+  border-radius: 50%;
+}
+
+#title {
+  text-align: center;
+  margin-left: 0;
+}
+
+.diff {
+  position: absolute;
+  top: 120%;
+  font-family: fyodor;
+}
+
+.class1 {
+  left: 200px;
+}
+
+.class2 {
+  right: 100px
 }
